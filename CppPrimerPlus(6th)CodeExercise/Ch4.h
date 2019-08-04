@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <array>
 
 class Ch4
 {
@@ -30,7 +31,7 @@ public:
 	void Ch4_5();
 	void Ch4_6();
 	void Ch4_7();
-	//void Ch4_8();
+	void Ch4_8();
 	void Ch4_9();
 	void Ch4_10();
 };
