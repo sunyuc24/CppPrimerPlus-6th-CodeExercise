@@ -102,31 +102,32 @@ void Ch4::Ch4_6(){
 }
 
 void Ch4::Ch4_7(){
-	pizza mypizza;
-	cout << "Enter the pizza's brand name: ";
-	getline(cin, mypizza.sbrand);
-	cout << "Enter the pizza's diameter: ";
-	cin >> mypizza.fdiameter;
-	cout << "Enter the pizza's weight: ";
-	cin >> mypizza.fweight;
-	cout << "mypizza's brand: " << mypizza.sbrand << endl
-		<< "mypizza's diameter: " << mypizza.fdiameter << endl
-		<< "mypizza's weight: " << mypizza.fweight << endl;
+	Pizza myPizza;
+	cout << "Enter the Pizza's brand name: ";
+	getline(cin, myPizza.sbrand);
+	cout << "Enter the Pizza's diameter: ";
+	cin >> myPizza.fdiameter;
+	cout << "Enter the Pizza's weight: ";
+	cin >> myPizza.fweight;
+	cout << "myPizza's brand: " << myPizza.sbrand << endl
+		<< "myPizza's diameter: " << myPizza.fdiameter << endl
+		<< "myPizza's weight: " << myPizza.fweight << endl;
 }
 
-//void Ch4::Ch4_8(){
-//	pizza *mypizza = new pizza;
-//	cout << "Enter the pizza's diameter: ";
-//	cin >> mypizza->fdiameter;
-//	cout << "Enter the pizza's brand name: ";
-//	getline(cin, mypizza->sbrand);
-//	cin.get();
-//	cout << "Enter the pizza's weight: ";
-//	cin >> mypizza->fweight;
-//	cout << "mypizza's brand: " << mypizza->sbrand << endl
-//		<< "mypizza's diameter: " << mypizza->fdiameter << endl
-//		<< "mypizza's weight: " << mypizza->fweight << endl;
-//}
+void Ch4::Ch4_8(){
+	Pizza *pPizza = new Pizza;
+	cout << "Enter the Pizza's diameter: ";
+	cin >> pPizza->fdiameter;
+	cin.get();
+	cout << "Enter the Pizza's brand name: ";
+	getline(cin, pPizza->sbrand);
+	cout << "Enter the Pizza's weight: ";
+	cin >> pPizza->fweight;
+	cout << "Pizza's brand: " << pPizza->sbrand << endl
+		<< "Pizza's diameter: " << pPizza->fdiameter << endl
+		<< "Pizza's weight: " << pPizza->fweight << endl;
+	delete pPizza;
+}
 
 void Ch4::Ch4_9(){
 	CandyBar * pCandyBar = new CandyBar[3];
@@ -138,8 +139,20 @@ void Ch4::Ch4_9(){
 			<< "CandyBar[" << i << "] weight: " << (pCandyBar + i)->fweight << endl
 			<< "CandyBar[" << i << "] calorie: " << (pCandyBar + i)->ncalorie << endl;
 	}
+	delete [] pCandyBar;
 }
 
 void Ch4::Ch4_10(){
-
+	using std::array;
+	array<double, 3> results;
+	cout << "Enter your three 40-meter running results: ";
+	cin >> results[0];
+	cin >> results[1];
+	cin >> results[2];
+	cout << "The first 40-meter running results: " << results[0] << endl
+		 << "The second 40-meter running results: " << results[1] << endl
+		 << "The third 40-meter running results: " << results[2] << endl
+		 << "The average of three 40-meter running results: "
+		 << (results[0] + results[1] + results[2]) / 3
+		 << endl;
 }
