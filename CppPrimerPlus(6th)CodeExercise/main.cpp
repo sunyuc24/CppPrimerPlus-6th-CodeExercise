@@ -48,7 +48,10 @@ int main()
 	//ch5.Ch5_3();
 	//ch5.Ch5_4();
 	//ch5.Ch5_5();
-	ch5.Ch5_6();
+	//ch5.Ch5_6();
+	//ch5.Ch5_7();
+	//ch5.Ch5_8();
+	ch5.Ch5_9();
 	system("pause");
 
 }

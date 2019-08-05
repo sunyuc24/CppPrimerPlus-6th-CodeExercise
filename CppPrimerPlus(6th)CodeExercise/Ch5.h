@@ -3,14 +3,13 @@
 #define _CH5_H
 #include <iostream>
 #include <cstdlib>
+#include <cstring>
 #include <string>
 #include <array>
 
 class Ch5
 {
 private:
-	 const std::string smonth[12];
-
 public:
 	Ch5();
 	~Ch5();
@@ -20,5 +19,9 @@ public:
 	void Ch5_4();
 	void Ch5_5();
 	void Ch5_6();
+	void Ch5_7();
+	void Ch5_8();
+	void Ch5_9();
+	void Ch5_10();
 };
 #endif
