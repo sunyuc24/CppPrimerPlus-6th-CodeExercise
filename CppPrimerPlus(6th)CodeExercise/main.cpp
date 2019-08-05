@@ -36,15 +36,9 @@ int main()
 	//ch4.Ch4_4();
 	//ch4.Ch4_5();
 	//ch4.Ch4_6();
-<<<<<<< HEAD
 	ch4.Ch4_7();
 	ch4.Ch4_8();
 	ch4.Ch4_9();
-=======
-	//ch4.Ch4_7();
-	ch4.Ch4_8();
-	//ch4.Ch4_9();
->>>>>>> a994824fec9984f12ec59528129e8ccee72bd92d
 	//ch4.Ch4_10();
 	system("pause");
 

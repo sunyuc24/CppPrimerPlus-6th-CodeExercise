@@ -4,7 +4,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
-using std::array;
 Ch4::Ch4()
 {
 }
@@ -96,8 +95,8 @@ void Ch4::Ch4_6(){
 	for (i; i < 3; i++)
 	{
 		cout << "some[" << i << "] brand: " << some[i].sbrand << endl
-			<< "some[" << i << "] weight: " << some[i].fweight << endl
-			<< "some[" << i << "] calorie: " << some[i].ncalorie << endl;
+			 << "some[" << i << "] weight: " << some[i].fweight << endl
+			 << "some[" << i << "] calorie: " << some[i].ncalorie << endl;
 	}
 
 }
@@ -116,7 +115,6 @@ void Ch4::Ch4_7(){
 }
 
 void Ch4::Ch4_8(){
-<<<<<<< HEAD
 	Pizza *pPizza = new Pizza;
 	cout << "Enter the Pizza's diameter: ";
 	cin >> pPizza->fdiameter;
@@ -129,19 +127,6 @@ void Ch4::Ch4_8(){
 		<< "Pizza's diameter: " << pPizza->fdiameter << endl
 		<< "Pizza's weight: " << pPizza->fweight << endl;
 	delete pPizza;
-=======
-	pizza *mypizza = new pizza;
-	cout << "Enter the pizza's diameter: ";
-	cin >> mypizza->fdiameter;
-	cin.get();
-	cout << "Enter the pizza's brand name: ";
-	getline(cin, mypizza->sbrand);
-	cout << "Enter the pizza's weight: ";
-	cin >> mypizza->fweight;
-	cout << "mypizza's brand: " << mypizza->sbrand << endl
-		 << "mypizza's diameter: " << mypizza->fdiameter << endl
-		 << "mypizza's weight: " << mypizza->fweight << endl;
->>>>>>> a994824fec9984f12ec59528129e8ccee72bd92d
 }
 
 void Ch4::Ch4_9(){
@@ -158,26 +143,16 @@ void Ch4::Ch4_9(){
 }
 
 void Ch4::Ch4_10(){
-<<<<<<< HEAD
 	using std::array;
-=======
->>>>>>> a994824fec9984f12ec59528129e8ccee72bd92d
 	array<double, 3> results;
 	cout << "Enter your three 40-meter running results: ";
 	cin >> results[0];
 	cin >> results[1];
 	cin >> results[2];
 	cout << "The first 40-meter running results: " << results[0] << endl
-<<<<<<< HEAD
 		 << "The second 40-meter running results: " << results[1] << endl
 		 << "The third 40-meter running results: " << results[2] << endl
 		 << "The average of three 40-meter running results: "
 		 << (results[0] + results[1] + results[2]) / 3
 		 << endl;
-=======
-		<< "The second 40-meter running results: " << results[1] << endl
-		<< "The third 40-meter running results: " << results[2] << endl
-		<< "The average of three 40-meter running results: " << (results[0] + results[1] + results[2]) / 3
-		<< endl;
->>>>>>> a994824fec9984f12ec59528129e8ccee72bd92d
 }
