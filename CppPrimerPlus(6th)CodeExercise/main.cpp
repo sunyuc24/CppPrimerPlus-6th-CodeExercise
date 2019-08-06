@@ -30,6 +30,7 @@ int main()
 	//ch3.Ch3_4();
 	//ch3.Ch3_5();
 	//ch3.Ch3_6();
+	
 	/*Ch4 ch4;*/
 	//ch4.Ch4_1();
 	//ch4.Ch4_2();
@@ -47,11 +48,13 @@ int main()
 	//ch5.Ch5_2();
 	//ch5.Ch5_3();
 	//ch5.Ch5_4();
-	//ch5.Ch5_5();
+	ch5.Ch5_5();
 	//ch5.Ch5_6();
+
 	//ch5.Ch5_7();
 	//ch5.Ch5_8();
-	ch5.Ch5_9();
+	//ch5.Ch5_9();
+	//ch5.Ch5_10();
 	system("pause");
 
 }

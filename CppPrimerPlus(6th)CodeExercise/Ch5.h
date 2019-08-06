@@ -3,13 +3,16 @@
 #define _CH5_H
 #include <iostream>
 #include <cstdlib>
-#include <cstring>
 #include <string>
+#include <cstring>
 #include <array>
 
 class Ch5
 {
 private:
+	std::string smonth[12];
+	std::string S;
+
 public:
 	Ch5();
 	~Ch5();
