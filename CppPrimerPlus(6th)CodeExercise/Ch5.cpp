@@ -103,7 +103,6 @@ void Ch5::Ch5_5(){
 		"Nov",
 		"Dec"
 	};
-	cout << S << endl;
 	int* psale = new int[12];
 	int nsum = 0;
 	for (int i = 0; i < 12; i++){
@@ -171,6 +170,7 @@ void Ch5::Ch5_7(){
 		cout << (car + i)->nmade << " " << (car + i)->smake
 			<< endl;
 	}
+	delete[] car;
 }
 
 void Ch5::Ch5_8(){
