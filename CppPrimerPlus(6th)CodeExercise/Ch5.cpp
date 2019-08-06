@@ -7,21 +7,21 @@ using std::string;
 
 Ch5::Ch5()
 {
-	string smonth[12] = {
-		"Jan",
-		"Feb",
-		"Mar",
-		"Apr",
-		"May",
-		"Jun",
-		"Jul",
-		"Aug",
-		"Sept",
-		"Oct",
-		"Nov",
-		"Dec"
-	};
-	S = "constructor has been called";
+	//string smonth[12] = {
+	//	"Jan",
+	//	"Feb",
+	//	"Mar",
+	//	"Apr",
+	//	"May",
+	//	"Jun",
+	//	"Jul",
+	//	"Aug",
+	//	"Sept",
+	//	"Oct",
+	//	"Nov",
+	//	"Dec"
+	//};
+	//S = "constructor has been called";
 }
 
 

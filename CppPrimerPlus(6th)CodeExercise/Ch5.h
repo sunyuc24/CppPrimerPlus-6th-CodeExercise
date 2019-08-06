@@ -10,8 +10,8 @@
 class Ch5
 {
 private:
-	std::string smonth[12];
-	std::string S;
+	//std::string smonth[12];
+	//std::string S;
 
 public:
 	Ch5();
