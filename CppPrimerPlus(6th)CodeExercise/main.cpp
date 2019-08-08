@@ -2,6 +2,7 @@
 #include "Ch3.h"
 #include "Ch4.h"
 #include "Ch5.h"
+#include "Ch6.h"
 int main()
 {
 	//Ch2 ch2;
@@ -43,18 +44,24 @@ int main()
 	//ch4.Ch4_9();
 	//ch4.Ch4_10();
 
-	Ch5 ch5;
+	//Ch5 ch5;
 	//ch5.Ch5_1();
 	//ch5.Ch5_2();
 	//ch5.Ch5_3();
 	//ch5.Ch5_4();
 	//ch5.Ch5_5();
 	//ch5.Ch5_6();
-
-	ch5.Ch5_7();
+	//ch5.Ch5_7();
 	//ch5.Ch5_8();
 	//ch5.Ch5_9();
 	//ch5.Ch5_10();
+
+	Ch6 ch6;
+	//ch6.Ch6_1();
+	//ch6.Ch6_2();
+	//ch6.Ch6_3();
+	//ch6.Ch6_5();
+	ch6.Ch6_6();
 	system("pause");
 
 }
