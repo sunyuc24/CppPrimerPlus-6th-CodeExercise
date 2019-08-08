@@ -73,15 +73,9 @@ void Ch6::Ch6_3(){
 		cin >> choice;
 		switch (choice)
 		{
-		case 'c': {cout << "A maple is a tree.\n";
-					i = false;
-					break; }
-		case 'p': {cout << "A maple is a tree.\n";
-					i = false; 
-					break; }		
-		case 't': {cout << "A maple is a tree.\n";
-					i = false;
-					break; }
+		case 'c': 
+		case 'p': 
+		case 't': 
 		case 'g': {cout << "A maple is a tree.\n";
 					i = false;
 					break; }	
@@ -170,7 +164,7 @@ void Ch6::Ch6_6(){
 	cout << "Enter the number of patrons: ";
 	cin >> number;
 	donation* pdonation = new donation[number];
-	//new an array to save Grand Patron's index of pdonation
+	//new an array to save Grand Patron's index in pdonation
 	int* pindex = new int[number]();  //initialize all elem to 0
 	for (int i = 0; i < number; i++){
 		cout << "Enter the " << i + 1 << "st patron's name: ";
@@ -178,7 +172,7 @@ void Ch6::Ch6_6(){
 		cout << "Enter the " << i + 1 << "st patron's donation value: ";
 		cin >> (pdonation + i)->value;
 		if ((pdonation + i)->value > 10000){
-			pindex[indx] = i+1; //save Grand Patron's index of pdonation
+			pindex[indx] = i+1; //save Grand Patron's index(plus 1) in pdonation
 			indx++; //count the number of Grand Patron
 		}
 	}
