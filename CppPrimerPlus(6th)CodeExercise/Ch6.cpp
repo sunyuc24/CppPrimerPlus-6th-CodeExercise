@@ -4,6 +4,8 @@ using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+using std::ifstream;
+using std::ofstream;
 Ch6::Ch6()
 {
 }
@@ -112,6 +114,52 @@ void Ch6::Ch6_5(){
 	}
 }
 
+//void Ch6::Ch6_6(){
+//	struct donation{
+//		string patron_name;
+//		double value;
+//	};
+//	int number = 0, count = 0;
+//	cout << "Enter the number of patrons: ";
+//	cin >> number;
+//	donation* pdonation = new donation[number];
+//	for (int i = 0; i < number; i++){
+//		cout << "Enter the " << i + 1 << "st patron's name: ";
+//		cin >> (pdonation + i)->patron_name;
+//		cout << "Enter the " << i + 1 << "st patron's donation value: ";
+//		cin >> (pdonation + i)->value;
+//	}
+//	cout << "Grand Patron:\n";
+//	for (int i = 0; i < number; i++){
+//		if (pdonation[i].value > 10000)
+//		{
+//			cout << "Patron name: " << pdonation[i].patron_name
+//				<< ", Donation value: " << pdonation[i].value
+//				<< endl;
+//			count++;
+//		}
+//	}
+//	if (count == 0)
+//	{
+//		cout << "None\n";
+//	}
+//	cout << "Patron:\n";
+//	count = 0;
+//	for (int i = 0; i < number; i++){
+//		if (pdonation[i].value <= 10000)
+//		{
+//			cout << "Patron name: " << pdonation[i].patron_name
+//				<< ", Donation value: " << pdonation[i].value
+//				<< endl;
+//			count++;
+//		}
+//	}
+//	if (count == 0)
+//	{
+//		cout << "None\n";
+//	}
+//}
+
 void Ch6::Ch6_6(){
 	struct donation
 	{
@@ -157,6 +205,117 @@ void Ch6::Ch6_6(){
 					 << ", Donation value: " << pdonation[i].value
 					 << endl;
 			}
+		}
+	}
+}
+
+void Ch6::Ch6_7(){// The 12 awesome oxen ambled quietly across 15 meters of lawn
+	cout << "Enter words (q to quit): \n";
+	int vowel_num = 0, cons_num = 0, oth_num = 0;
+	string str;
+	char firstchar;
+	
+	while (cin >> str && str != "q"){
+		firstchar = str[0];
+		if (isalpha(firstchar))
+		{
+			switch (firstchar)
+			{
+			case 'a':
+			case 'A': 
+			case 'e':
+			case 'E':
+			case 'o':
+			case 'O':
+			case 'u':
+			case 'U':
+			case 'i':
+			case 'I': vowel_num++;
+				break;
+			default: cons_num++;
+			}
+		}
+		else{
+			oth_num++;
+		}
+	}
+	cout << vowel_num << " words beginning with vowels\n"
+		 << cons_num << " words beginning with consonants\n"
+		 << oth_num << " others.\n";
+}
+
+void Ch6::Ch6_8(){
+	ifstream inFile;
+	char ch;
+	int count = 0;
+	inFile.open("Ch6_8.txt");
+	if (inFile.is_open()){
+		while (inFile.get(ch)){
+			count++;
+		}
+		if (inFile.eof()){
+			cout << "End of file reached.\n";
+		}
+	}
+	else{
+		cout << "Could not open file!.\n";
+	}
+	inFile.close();
+	cout << "There are " << count << " chars in this file.\n";
+}
+
+void Ch6::Ch6_9(){
+	struct donation
+	{
+		string patron_name;
+		double value;
+	};
+	ifstream inFile;
+	string str;
+	int num = 0, count = 0;
+	inFile.open("Ch6_9.txt");
+	if (inFile.is_open()){
+		(inFile >> num).get();
+		donation* pdonation = new donation[num];
+		for (int i = 0; i < num; i++){
+			if (!inFile.eof()){
+				getline(inFile, pdonation[i].patron_name);
+				//cout << pdonation[i].patron_name;
+				(inFile >> pdonation[i].value).get();
+				//cout << pdonation[i].value;
+			}
+			else{
+				break;
+			}
+		}
+		cout << "Grand Patron:\n";
+		for (int i = 0; i < num; i++){
+		if (pdonation[i].value > 10000)
+		{
+		cout << "Patron name: " << pdonation[i].patron_name
+		<< ", Donation value: " << pdonation[i].value
+		<< endl;
+		count++;
+		}
+		}
+		if (count == 0)
+		{
+		cout << "None\n";
+		}
+		cout << "Patron:\n";
+		count = 0;
+		for (int i = 0; i < num; i++){
+		if (pdonation[i].value <= 10000)
+		{
+		cout << "Patron name: " << pdonation[i].patron_name
+		<< ", Donation value: " << pdonation[i].value
+		<< endl;
+		count++;
+		}
+		}
+		if (count == 0)
+		{
+		cout << "None\n";
 		}
 	}
 }

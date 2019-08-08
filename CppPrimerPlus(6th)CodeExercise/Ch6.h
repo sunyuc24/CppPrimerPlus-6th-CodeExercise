@@ -20,5 +20,8 @@ public:
 	void Ch6_3();
 	void Ch6_5();
 	void Ch6_6();
+	void Ch6_7();
+	void Ch6_8();
+	void Ch6_9();
 };
 #endif

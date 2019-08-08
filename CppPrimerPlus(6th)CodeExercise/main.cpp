@@ -61,7 +61,10 @@ int main()
 	//ch6.Ch6_2();
 	//ch6.Ch6_3();
 	//ch6.Ch6_5();
-	ch6.Ch6_6();
+	//ch6.Ch6_6();
+	//ch6.Ch6_7();
+	//ch6.Ch6_8();
+	ch6.Ch6_9();
 	system("pause");
 
 }
