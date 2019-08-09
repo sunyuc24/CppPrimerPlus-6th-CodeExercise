@@ -152,6 +152,7 @@ void Ch6::Ch6_5(){
 //	{
 //		cout << "None\n";
 //	}
+//	delete[] pdonation;
 //}
 
 void Ch6::Ch6_6(){
@@ -201,6 +202,7 @@ void Ch6::Ch6_6(){
 			}
 		}
 	}
+	delete[] pdonation;
 }
 
 void Ch6::Ch6_7(){// The 12 awesome oxen ambled quietly across 15 meters of lawn
@@ -311,5 +313,6 @@ void Ch6::Ch6_9(){
 		{
 		cout << "None\n";
 		}
+		delete[] pdonation;
 	}
 }
