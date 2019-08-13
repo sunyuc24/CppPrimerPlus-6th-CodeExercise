@@ -7,6 +7,8 @@
 #include <string>
 #include <cstring>
 #include <cctype>
+#include<typeinfo>
+
 using std::string;
 class Ch8
 {
@@ -21,6 +23,10 @@ private:
 		char* str;
 		int ct;
 	};
+	struct debts{
+		char name[50];
+		double amount;
+	};
 
 public:
 	Ch8();
@@ -34,10 +40,16 @@ public:
 	void Ch8_3toupper(const string&);
 	void Ch8_4();
 	void Ch8_4set(stringy&, char *);
-	void Ch8_4show(const stringy&);
 	void Ch8_4show(const stringy&, int n = 1);
-	void Ch8_4show(const char ch[]);
-	void Ch8_4show(const char ch[], int n = 1);
-};
+	void Ch8_4show(const char*, int n = 1);
+	void Ch8_5();
+	template <typename T> T Ch8_5max5(T *);
+	template <typename T> T Ch8_6max6(T *, int);
+	void Ch8_6();
+	void Ch8_7();
+	template <typename T> void Ch8_6ShowArray(T arr[], int);
+	template <typename T> void Ch8_6ShowArray(T* arr[], int);
+
+}; 
 
 #endif

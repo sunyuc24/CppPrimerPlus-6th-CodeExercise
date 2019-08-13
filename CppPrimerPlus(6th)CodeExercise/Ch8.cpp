@@ -98,19 +98,11 @@ void Ch8::Ch8_4(){
 	Ch8_4show(testing, 3);
 	Ch8_4show("Done!");
 }
-
-void Ch8::Ch8_4set(stringy& stct, char ch[]){
-	char *pch = new char[sizeof(ch)];
-	for (int i = 0;i < sizeof(ch); i++)
-	{
-		pch[i] = ch[i];
-	}
-	stct.str = pch;
-	stct.ct = sizeof(ch)-1;
-}
-
-void Ch8::Ch8_4show(const stringy& stct){
-	cout << stct.str;
+void Ch8::Ch8_4set(stringy& stct, char* str){
+	int size = strlen(str);
+	stct.ct = size;
+	stct.str = new char[size];
+	strcpy_s(stct.str, size + 1, str);
 }
 
 void Ch8::Ch8_4show(const stringy& stct, int n /* = 1 */){
@@ -119,18 +111,101 @@ void Ch8::Ch8_4show(const stringy& stct, int n /* = 1 */){
 	}
 }
 
-void Ch8::Ch8_4show(const char ch[]){
-	for (int i = 0; i < sizeof(ch); i++){
-		cout << ch[i];
+void Ch8::Ch8_4show(const char* ch, int n /* = 1 */){
+	for (int i = 0; i < n; i++){
+		cout << ch << endl;
 	}
-	cout << endl;
+}
+template <typename T> T Ch8::Ch8_5max5(T* arr){
+	T Max = arr[0];
+	for (int i = 0; i < 5; i++){
+		if (Max < arr[i]){
+			Max = arr[i];
+		}
+		else{
+			continue;
+		}
+	}
+	return Max;
+}
+void Ch8::Ch8_5(){
+	int arr[5] = { 1, 2, 3, 4, 5 };
+	int Max = Ch8_5max5(arr);
+	cout << "Max: " << Max << endl;
 }
 
-void Ch8::Ch8_4show(const char ch[], int n /* = 1 */){
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < sizeof(ch); j++){
-			cout << ch[i];
+template <typename T> T Ch8::Ch8_6max6(T* arr, int size){
+	T Max = arr[0];
+	for (int i = 0; i < size; i++){
+		if (Max < arr[i]){
+			Max = arr[i];
 		}
-		cout << endl;
+		else{
+			continue;
+		}
 	}
+	return Max;
+}
+
+template <> char * Ch8::Ch8_6max6(char ** arr, int n)
+{
+	int Max_len = strlen(arr[0]);
+	int tmp_len;
+	int Max_idx = 0;
+
+	int i;
+	for (i = 0; i < n; ++i)
+	{
+		tmp_len = strlen(arr[i]);
+		if (tmp_len > Max_len)
+		{
+			Max_len = tmp_len;
+			Max_idx = i;
+		}
+	}
+	return arr[Max_idx];
+}
+void Ch8::Ch8_6(){
+	int narr[6] = { 1, 2, 3, 4, 5, 6 };
+	double darr[4] = { 2.1, 3.45, 21.3, 32.45 };
+	int nMax = Ch8_6max6(narr, 6);
+	char* str[] = { "i", "hate", "you", "!", "!" };
+	double dMax = Ch8_6max6(darr, 4);
+	char * cMax = Ch8_6max6(str, 5);
+	cout << "int Max: " << nMax << endl;
+	cout << "double Max: " << dMax << endl;
+	cout << "str Max's address: " << (void*)cMax << endl;
+}
+
+void Ch8::Ch8_7(){
+	int things[6] = { 13, 31, 103, 301, 310, 120 };
+	debts mr_E[3] = {
+		{"Ima Wolfe", 2400.0},
+		{"Ura Foxe", 1300.0},
+		{"Iby Stout", 1800.0}
+	};
+	double *pd[3];
+	for (int i = 0; i < 3; i++){
+		pd[i] = &mr_E[i].amount;
+	}
+	cout << "Mr. E's things sum:\n";
+	Ch8_6ShowArray(things, 6);
+	cout << "Listing Mr. E's debts sum:\n";
+	Ch8_6ShowArray(pd, 3);
+}
+
+template <typename T> void Ch8::Ch8_6ShowArray(T arr[], int n){
+	T sum = arr[0];
+	for (int i = 1; i < n; i++){
+		sum += arr[i];
+	}
+	cout << sum << endl;
+}
+
+template <typename T> void Ch8::Ch8_6ShowArray(T* arr[], int n){
+	T sum = *arr[0];
+	for (int i = 1; i < n; i++){
+		sum += *arr[i];
+	}
+	cout << sum << endl;
 }
