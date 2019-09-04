@@ -1,21 +1,24 @@
 #include "Ch10_3.h"
-
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
 
 Golf::Golf()
 {
-	strcpy(fullname, "Noname");
+	strcpy_s(fullname, "Noname");
 	handicap = 0;
 }
 
 Golf::Golf(const char * name, int hc)
 {
-	strcpy(fullname, name);
+	strcpy_s(fullname, name);
 	handicap = hc;
 }
 
 const Golf & Golf::setgolf(const Golf & g)
 {
-	strcpy(fullname, g.fullname);
+	strcpy_s(fullname, g.fullname);
 	handicap = g.handicap;
 
 	return *this;
