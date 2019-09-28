@@ -1,0 +1,33 @@
+
+#ifndef _CH11_5_STONEWT_H
+#define _CH11_5_STONEWT_H
+#include <iostream>
+a
+class Ch11_5_StoneWt
+{
+public:
+    enum Mode {STN, PDS};
+private:
+    enum {Lbs_per_stn = 14};      // pounds per stone
+    int stone;                    // whole stones
+    double pds_left;              // fractional pounds
+    double pounds;                // entire weight in pounds
+    Mode status;
+public:
+    Ch11_5_StoneWt(double lbs, Mode s = STN);          // constructor for double pounds
+	Ch11_5_StoneWt(int stn, double lbs, Mode s = STN); // constructor for stone, lbs
+    Ch11_5_StoneWt();                    // default constructor
+    ~Ch11_5_StoneWt();
+    // overloaded functions
+    Ch11_5_StoneWt operator+(const Ch11_5_StoneWt & st) const;
+    Ch11_5_StoneWt operator-(const Ch11_5_StoneWt & st) const;
+    Ch11_5_StoneWt operator*(double p) const;
+    void set_stn() { status = STN; }
+    void set_pds() { status = PDS; }
+    // friend function
+    friend Ch11_5_StoneWt operator*(double p, const Ch11_5_StoneWt & st)
+    { return st * p; }
+    friend std::ostream & operator<<(std::ostream & os, const Ch11_5_StoneWt & st);
+};
+
+#endif
